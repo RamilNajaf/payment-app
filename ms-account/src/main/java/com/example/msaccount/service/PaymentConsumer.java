@@ -3,11 +3,13 @@ package com.example.msaccount.service;
 import com.example.msaccount.dto.TransactionRequest;
 import com.example.msaccount.entity.TransactionType;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PaymentConsumer {
 
     private final TransactionService transactionService;
@@ -17,7 +19,7 @@ public class PaymentConsumer {
             groupId = "${spring.kafka.consumer.group-id}",
             containerFactory = "kafkaListenerContainerFactory")
     public void consumePayment(TransactionRequest transactionRequest) {
-        System.out.println("Received payment event: " + transactionRequest);
+        log.info("Received payment event: {}" ,transactionRequest);
 
         if (TransactionType.REFUND == transactionRequest.getType()) {
             transactionService.refund(transactionRequest.getAccountId(), transactionRequest.getTransactionId(), transactionRequest.getUserId());

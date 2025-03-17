@@ -12,7 +12,6 @@ import com.example.userms.util.PasswordEncoderUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +22,7 @@ public class AuthService {
 
     public JwtResponse authenticate(AuthenticationRequestDTO authentication) {
         User user = userService.findByUsername(authentication.getUsername())
-                .orElseThrow(() -> new NoSuchElementException("User not found"));
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
         checkPassword(user.getPassword(), authentication.getPassword());
         String token = jwtUtil.createToken(user);
         return JwtResponse.builder()
@@ -40,7 +39,7 @@ public class AuthService {
 
     private void checkUserExist(RegistrationRequest registrationRequest) {
         if (userService.isUserExists(registrationRequest.getUsername())) {
-            throw new UserExistException("User  exist with this username");
+            throw new UserExistException("User exist with this username");
         }
     }
 
