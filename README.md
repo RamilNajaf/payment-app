@@ -6,6 +6,8 @@
 - Spring Framework
 - Java 17
 - Kafka
+- Junit
+- Mockito
 - Liquibase
 - Mysql
 - Docker
