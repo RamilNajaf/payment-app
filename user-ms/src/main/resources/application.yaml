@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-ms
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password
+    url: jdbc:mysql://localhost:3306/users_db?createIfDatabaseNotExist=true
+  jpa:
+    hibernate:
+      ddl-auto: none # Liquibase will manage migrations
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  liquibase:
+      change-log: classpath:db/changelog/db.changelog-master.yaml
+
+security:
+  jwt:
+    base64-secret-key: VWNmMnFzNGh1S2JxMVdvajc2dzhMSUJGbVlyY0paVWtQT1N1aWxxWHRqYmtwaHhJbEZpSkIxcHRqaHZhVUQ3STE1bVhXR1JLTWxQYnR4enlEb0pST3FFcUFWZWVvOWw1c0l6NWRUanRNemlobllxRXZFZ3NteWJUNkxmeDFFNXJRY0hrc21fTmc5UkZ2QzhqekdOeEZXOXR6NVNjQTlHcVlGamRHNFBsV3Jz
+    validity-in-seconds: 3600
+
+

@@ -1,0 +1,30 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: ms-account
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: transaction-group
+    admin:
+      properties:
+        bootstrap.servers: localhost:9092
+    topics:
+      transaction: transaction-topic
+      transaction-dlt: transaction-DLT-topic
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/transactions_db?createIfDatabaseNotExist=true
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none # Liquibase will manage migrations
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml

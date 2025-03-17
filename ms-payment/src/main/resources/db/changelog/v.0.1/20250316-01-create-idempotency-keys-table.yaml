@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250316-01-create-idempotency-key-table
+      author: ramil_najaf
+      changes:
+        - createTable:
+            tableName: idempotency_keys
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: idempotency_key
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: processed_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+
+        - addUniqueConstraint:
+            tableName: idempotency_keys
+            columnNames: idempotency_key
+            constraintName: unique_idempotency_key

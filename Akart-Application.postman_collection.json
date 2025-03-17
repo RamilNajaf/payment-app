@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "ca6b8eed-93e2-4e9f-a2b7-0433059650ca",
+		"name": "Akart-Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17129009"
+	},
+	"item": [
+		{
+			"name": "ms-payment",
+			"item": [
+				{
+					"name": "refund",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{}",
+								"addTokenTo": "header",
+								"algorithm": "HS256",
+								"isSecretBase64Encoded": false,
+								"headerPrefix": "Bearer",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1pbCIsInVzZXJfaWQiOjMsImV4cCI6MTc0MjIxODE5MH0.8mDCaOUsuHLRzMazDEB7w6jWaTV7YgRa7jbHQpT88BeyAULO8WgymCGuUO8UIxDI4l918xJwFnZBk2KE6p7oKQ",
+								"type": "text"
+							},
+							{
+								"key": "IDEMPOTENCY-KEY",
+								"value": "120213123112121asassadasdsaasdasdasdasd",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{  \r\n    \"accountId\":3,\r\n    \"transactionId\":19\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/payments/refund"
+					},
+					"response": []
+				},
+				{
+					"name": "top_up",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{}",
+								"addTokenTo": "header",
+								"algorithm": "HS256",
+								"isSecretBase64Encoded": false,
+								"headerPrefix": "Bearer",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1pbCIsInVzZXJfaWQiOjMsImV4cCI6MTc0MjIxODE5MH0.8mDCaOUsuHLRzMazDEB7w6jWaTV7YgRa7jbHQpT88BeyAULO8WgymCGuUO8UIxDI4l918xJwFnZBk2KE6p7oKQ",
+								"type": "text"
+							},
+							{
+								"key": "IDEMPOTENCY-KEY",
+								"value": "116sssadasd",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"accountId\":3,\r\n    \"amount\":712\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/payments/top_up"
+					},
+					"response": []
+				},
+				{
+					"name": "purchase",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{}",
+								"addTokenTo": "header",
+								"algorithm": "HS256",
+								"isSecretBase64Encoded": false,
+								"headerPrefix": "Bearer",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1pbCIsInVzZXJfaWQiOjMsImV4cCI6MTc0MjIxODE5MH0.8mDCaOUsuHLRzMazDEB7w6jWaTV7YgRa7jbHQpT88BeyAULO8WgymCGuUO8UIxDI4l918xJwFnZBk2KE6p7oKQ",
+								"type": "text"
+							},
+							{
+								"key": "IDEMPOTENCY-KEY",
+								"value": "123451212sasa",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"accountId\":3,\r\n    \"amount\":600\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/payments/purchase"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-account",
+			"item": [
+				{
+					"name": "account-create",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{}",
+								"addTokenTo": "header",
+								"algorithm": "HS256",
+								"isSecretBase64Encoded": false,
+								"headerPrefix": "Bearer",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1pbCIsInVzZXJfaWQiOjMsImV4cCI6MTc0MjIxODE5MH0.8mDCaOUsuHLRzMazDEB7w6jWaTV7YgRa7jbHQpT88BeyAULO8WgymCGuUO8UIxDI4l918xJwFnZBk2KE6p7oKQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account-get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"addTokenTo": "header",
+								"payload": "{}",
+								"algorithm": "HS256",
+								"isSecretBase64Encoded": false,
+								"headerPrefix": "Bearer",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1pbCIsInVzZXJfaWQiOjMsImV4cCI6MTc0MjIxNzkwN30.0RgWo6Anv6sgh1ffAAN_X2serVXhUpUg6fIIiOxYUgshYaAsHgVzivuXRQKoiWOpYf1V4V89RYxNoDJQiton4w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/accounts/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"accounts",
+								"3"
+							],
+							"query": [
+								{
+									"key": "Bearer",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account-transactions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"payload": "{}",
+								"addTokenTo": "header",
+								"algorithm": "HS256",
+								"isSecretBase64Encoded": false,
+								"headerPrefix": "Bearer",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1pbCIsInVzZXJfaWQiOjMsImV4cCI6MTc0MjIxODE5MH0.8mDCaOUsuHLRzMazDEB7w6jWaTV7YgRa7jbHQpT88BeyAULO8WgymCGuUO8UIxDI4l918xJwFnZBk2KE6p7oKQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/accounts/3/transactions"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW1pbCIsImlzcyI6ImJvb2tTdG9yZVRhc2siLCJpYXQiOjE2NTA5NzUxMTEsImV4cCI6MTY1MDk3NjAxMX0.f3wGLVQ4uzee3cRiNYrdLbCom2d1rK4WL9tYdVsvNFE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"username\":\"ramil\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYW1pbCIsImlzcyI6ImJvb2tTdG9yZVRhc2siLCJpYXQiOjE2NTA5NzUxMTEsImV4cCI6MTY1MDk3NjAxMX0.f3wGLVQ4uzee3cRiNYrdLbCom2d1rK4WL9tYdVsvNFE"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"username\":\"ramil\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Authorization",
+			"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW1pbCIsInVzZXJfaWQiOjMsImV4cCI6MTc0MjIxNzE1Nn0.IyZguH1YZA26JSj4W03WWnTLTbQOUtxCJ9M2GKJmcR-gQy_HQ3L9AHXDdgF91TNjN2IRk4vNjH6VrMDxOCFQiA\n",
+			"type": "string"
+		}
+	]
+}

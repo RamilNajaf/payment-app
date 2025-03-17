@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250316-02-create-transactions-table
+      author: ramil_najaf
+      changes:
+        - createTable:
+            tableName: transactions
+            columns:
+              - column:
+                  name: transaction_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: parent_transaction_id
+                  type: bigint
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: account_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_status
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: info
+                  type: varchar(255)
+              - column:
+                  name: amount
+                  type: decimal
+              - column:
+                  name: date
+                  type: timestamp

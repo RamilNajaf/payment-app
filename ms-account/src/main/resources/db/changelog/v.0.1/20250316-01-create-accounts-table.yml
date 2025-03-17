@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250316-01-create-accounts-table
+      author: ramil_najaf
+      changes:
+        - createTable:
+            tableName: accounts
+            columns:
+              - column:
+                  name: account_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: balance
+                  type: decimal
+                  constraints:
+                    nullable: false
